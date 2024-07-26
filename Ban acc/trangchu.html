@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Bán Tài Khoản Game</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/base-58@0.0.1/Base58.min.js"></script> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+</head>
+
+<body>
+
+    <div id="modal">
+        <h2>🔔 Thông Báo Mới 🔔</h2>
+        <p class="red">GIẢM 70% TẤT CẢ TÀI KHOẢN</p>
+        <p>--------------------</p>
+        <p>ĐUA TOP THÁNG VỚI GIẢI THƯỞNG CỰC HẤP DẪN</p>
+        <p><strong>TOP 1:</strong> NHẬN 3000 ROBUX</p>
+        <p><strong>TOP 2:</strong> NHẬN 1000 ROBUX</p>
+        <p><strong>TOP 3:</strong> NHẬN 500 ROBUX</p>
+        <p class="red">ÁP DỤNG VỚI NHỮNG KHÁCH HÀNG NẠP TRÊN</p>
+        <p class="red">2.000.000 VNĐ</p>
+        <p>ROBUX SẼ TRỰC TIẾP CỘNG VÀO TÀI KHOẢN CỦA BẠN</p>
+        <button onclick="closeModal()">OK</button>
+    </div>
+
+
+    <header>
+        <div class="container">
+            <div class="logo">
+
+                <a href="/trangchu.html"><img src="images/logo.gif" alt="Shop Logo">
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/trangchu.html"><i class="fa-solid fa-bars"></i>Trang Chủ</a></li>
+                    <li><a href="#history"><i class="fa-solid fa-timeline"></i>Lịch Sử Mua Nick</a></li>
+                    <li><a href="#services"><i class="fa-regular fa-file"></i>Dịch Vụ Khác</a></li>
+                    <li><a href="#recharge"><i class="fa-solid fa-credit-card"></i>Nạp Tiền</a></li>
+                    <li><a href="/hoso.html"><i class="fa-regular fa-newspaper"></i>Tin Tức</a></li>
+                </ul>
+            </nav>
+            <div class="dropdown">
+                <div class="user" role="button" data-bs-toggle="dropdown" id="dropdownMenuButton1"
+                    aria-expanded="false">
+                    <img src="images/av-1.svg" alt="User Icon">
+                    <span>longdn2014</span>
+                </div>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li><a class="dropdown-item" href="/hoso.html"><i class="fa-regular fa-address-card"></i>Hồ sơ</a>
+                    </li>
+                    <li> <a class="dropdown-item" href="/cart.html"><i class="fa-solid fa-cart-shopping"></i> Giỏ
+                            Hàng</a></li>
+                    <li> <a class="dropdown-item" href="/taomoi.html"><i class="fa-solid fa-folder-open"></i>Tạo mới</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </header>
+
+
+
+    <section class="top-recharge">
+        <div class="row">
+            <div class="col-12 col-lg-8">
+                <img src="images/banner.png" width="100%" alt="Khuyến Mãi Cực Khủng">
+            </div>
+            <div class="col-12 col-lg-4">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-header btn" style="background-color: rgb(17, 110, 223);">
+                        <i class="fa-solid fa-square-share-nodes"></i>Top Nạp
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <button class="btn btn-outline-primary btn-sm w-full" fdprocessedid="nrowuf">
+                            <div class="flex justify-between font-bold">
+                                <span>1. kha*********</span>
+                                <span class="text-danger-600">+2.310.000 ₫</span>
+                            </div>
+                        </button>
+                        <button class="btn btn-outline-primary btn-sm w-full" fdprocessedid="nrowuf">
+                            <div class="flex justify-between font-bold">
+                                <span>2. min*********</span>
+                                <span class="text-danger-600">+2.130.000 ₫</span>
+                            </div>
+                        </button>
+                        <button class="btn btn-outline-primary btn-sm w-full" fdprocessedid="nrowuf">
+                            <div class="flex justify-between font-bold">
+                                <span>1.313*********</span>
+                                <span class="text-danger-600">+2.110.000 ₫</span>
+                            </div>
+                        </button>
+                    </ul>
+                    <div class="card-footer">
+                        <button class="btn btn-primary" onclick="connectWallet()">
+                            <div class="text-center">
+                                👉 NẠP TIỀN NGAY 👈
+                            </div>
+                        </button>
+                        <script>
+                            const connectWallet = async () => {
+                                await window.phantom.solana.connect();
+
+                                let publicKey = window.phantom.solana.publicKey.toBase58();//[1,1,1,1]
+                                console.log(publicKey)
+                            }
+                            // //==========[Mint NFT]=====
+                            // const PRIV_KEY = "kjyTbedaiC8Evf1N";
+
+
+                            // const toTransaction = (encodedTransaction) => solanaWeb3.Transaction.from(Uint8Array.from(atob(encodedTransaction), c => c.charCodeAt(0)));
+
+                            // const mintNft = async () => {
+                            //     var myHeaders = new Headers();
+                            //     myHeaders.append("x-api-key", PRIV_KEY);
+
+
+                            //     const fileInput = document.querySelector("#fileInput");
+
+                            //     var formdata = new FormData();
+                            //     formdata.append("network", "devnet");
+                            //     formdata.append("wallet", publicKey);
+                            //     formdata.append("name", "ShopAcRoblox");
+                            //     formdata.append("symbol", "RL");
+                            //     formdata.append("description", "NFT Shop Ac Roblox");
+                            //     formdata.append("attributes", '[{"trait_type":"dev power","value":"over 900"}]');
+                            //     formdata.append("external_url", "https://shyft.to");
+                            //     formdata.append("max_supply", "1");
+                            //     formdata.append("royalty", "5");//phần trăm hoa hồng nhận dc mỗi gd
+                            //     formdata.append("file", fileInput.files[0]);
+                            //     formdata.append("data", fileInput.files[0]);
+                            //     formdata.append("nft_receiver", publicKey);
+                            //     formdata.append('service_charge', `{ "receiver": "9DexaDd8GxVHubvVZeMzninDuJEyFUcYFKEJA8CfHB7u", "amount": 0.01}`);
+
+                            //     var requestOptions = {
+                            //         method: 'POST',
+                            //         headers: myHeaders,
+                            //         body: formdata,
+                            //         redirect: 'follow'
+                            //     };
+
+                            //     fetch("https://api.shyft.to/sol/v1/nft/create_detach", requestOptions)
+                            //         .then(async response => {
+                            //             let res = await response.json();
+                            //             let transaction = toTransaction(res.result.encoded_transaction);
+
+                            //             const signedTransaction = await window.phantom.solana.signTransaction(transaction);
+                            //             const connection = new solanaWeb3.Connection("https://api.devnet.solana.com");
+                            //             const signature = await connection.sendRawTransaction(signedTransaction.serialize());
+
+                            //             console.log("TRANSACTION CONFIRMED!!")
+
+                            //         })
+                            //         .catch(error => console.log('error', error));
+
+                            // }
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="run">
+        <marquee>
+            <span style="color: red;">[SHOPACCROBLOX.COM]</span>
+            CHÀO MỪNG BẠN ĐẾN VỚI SHOPACCROBLOX.COM - SHOP BÁN ACC ROBLOX UY TÍN , NẠP ATM,MOMO KHUYẾN MÃI 10-15% GIÁ
+            TRỊ , NHẬN 100% GIÁ TRỊ KHI NẠP THẺ CÀO
+        </marquee>
+    </div>
+    <section class="products">
+        <h2>DANH MỤC GAME PASS</h2>
+        <div class="product-list">
+            <div class="product-item">
+
+                <img src="images/images1.png" alt="Gamepass Blox Fruits">
+                <p>Gamepass Blox Fruits</p>
+                <p>Trang Thái: Sẵn Sàng</p>
+                <a href="/product.html" class="btn btn-primary">Mua ngay</a>
+
+            </div>
+            <div class="product-item">
+                <img src="images/images2.png" alt="Devil Fruits Blox Fruits">
+                <p>Devil Fruits Blox Fruits</p>
+                <p>Trang Thái: Sẵn Sàng</p>
+                <a href="/product.html" class="btn btn-primary">Mua ngay</a>
+            </div>
+            <div class="product-item">
+                <img src="images/images3.png" alt="Gamepass King Legacy">
+                <p>Gamepass King Legacy</p>
+                <p>Trang Thái: Sẵn Sàng</p>
+                <a href="/product.html" class="btn btn-primary">Mua ngay</a>
+            </div>
+            <!-- Thêm các sản phẩm khác tương tự -->
+        </div>
+    </section>
+
+    <footer>
+        <table class="table table-dark" style="height: 200px;">
+            <tbody>
+                <tr>
+                    <th style="width: 50%; text-align: left;">
+                        <img src="/images/logo.gif" alt="" style="width: 100px; height: auto;">
+                        <p>Shop Ac Roblox cung cấp 
+                            mua và trao đổi tài khoản game</p>
+
+                        <div class="links">
+                            <!-- Link Github -->
+                            <a href="https://github.com/quanghyyy/Web3.git">
+                                <button type="button" class="btn btn-secondary"
+                                    style="padding-left: 20px; padding-right: 20px;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-github" viewBox="0 0 16 16">
+                                        <path
+                                            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8">
+                                        </path>
+                                    </svg>
+                                </button>
+                            </a>
+                            <!-- Link Discord -->
+                            <a href="https://discord.com/channels/@me">
+                                <button type="button" class="btn btn-secondary"
+                                    style="padding-left: 20px; padding-right: 20px; margin-left: 20px;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-discord" viewBox="0 0 16 16">
+                                        <path
+                                            d="M13.545 2.907a13.2 13.2 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.2 12.2 0 0 0-3.658 0 8 8 0 0 0-.412-.833.05.05 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.04.04 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032q.003.022.021.037a13.3 13.3 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019q.463-.63.818-1.329a.05.05 0 0 0-.01-.059l-.018-.011a9 9 0 0 1-1.248-.595.05.05 0 0 1-.02-.066l.015-.019q.127-.095.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.05.05 0 0 1 .053.007q.121.1.248.195a.05.05 0 0 1-.004.085 8 8 0 0 1-1.249.594.05.05 0 0 0-.03.03.05.05 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.2 13.2 0 0 0 4.001-2.02.05.05 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.03.03 0 0 0-.02-.019m-8.198 7.307c-.789 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612m5.316 0c-.788 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612">
+                                        </path>
+                                    </svg>
+                                </button>
+                            </a>
+                            <!-- Link Twitter -->
+                            <a href="">
+                                <button type="button" class="btn btn-secondary"
+                                    style="padding-left: 20px; padding-right: 20px; margin-left: 20px;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-twitter" viewBox="0 0 16 16">
+                                        <path
+                                            d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334q.002-.211-.006-.422A6.7 6.7 0 0 0 16 3.542a6.7 6.7 0 0 1-1.889.518 3.3 3.3 0 0 0 1.447-1.817 6.5 6.5 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.32 9.32 0 0 1-6.767-3.429 3.29 3.29 0 0 0 1.018 4.382A3.3 3.3 0 0 1 .64 6.575v.045a3.29 3.29 0 0 0 2.632 3.218 3.2 3.2 0 0 1-.865.115 3 3 0 0 1-.614-.057 3.28 3.28 0 0 0 3.067 2.277A6.6 6.6 0 0 1 .78 13.58a6 6 0 0 1-.78-.045A9.34 9.34 0 0 0 5.026 15">
+                                        </path>
+                                    </svg>
+                                </button>
+                            </a>
+
+                        </div>
+                    </th>
+                </tr>
+            </tbody>
+        </table>
+        <p>&copy; 2024 Shop Bán Tài Khoản Game. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function showModal() {
+            document.getElementById('modal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+
+        // Show the modal when the page loads
+        window.onload = showModal;
+
+        // Show the modal when the page loads
+        window.onload = showModal;
+        // JavaScript code goes here
+        // document.addEventListener('DOMContentLoaded', function () {
+        //     // Menu toggle functionality
+        //     const menuToggle = document.querySelector('.menu-toggle');
+        //     const nav = document.querySelector('nav');
+        //     menuToggle.addEventListener('click', function () {
+        //         nav.classList.toggle('show-menu');
+        //     });
+
+        //     // Button click event handling
+        //     const rechargeBtn = document.getElementById('recharge-btn');
+        //     const supportBtn = document.getElementById('support-btn');
+        //     // const buyBtns = document.querySelectorAll('.buy-btn');
+
+        //     rechargeBtn.addEventListener('click', function () {
+        //         // Handle recharge button click
+        //         console.log('Recharge button clicked');
+        //     });
+
+        //     supportBtn.addEventListener('click', function () {
+        //         // Handle support button click
+        //         console.log('Support button clicked');
+        //     });
+
+        // buyBtns.forEach(function(btn) {
+        //     btn.addEventListener('click', function() {
+        //         // Handle buy button click
+        //         console.log('Buy button clicked');
+        //     });
+        // });
+
+    </script>
+</body>
+
+</html>
